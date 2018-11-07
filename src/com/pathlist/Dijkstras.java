@@ -40,18 +40,22 @@ public class Dijkstras {
 			return result;
 		}
 		
-		List<List<Character>> getAllPaths(Character u, Character v){			
+	List<List<Character>> getAllPaths(ArrayList<Character> startNodeList, Character v){
 						
 			List<List<Character>> result = new ArrayList<List<Character>>();
-			if(u == v){
-				List<Character> temp = new ArrayList<Character>();
-				temp.add(u);
-				result.add(temp);
-				return result;
+
+			for(int i = 0; i<startNodeList.size(); i++) {
+				char u = startNodeList.get(i);
+				if(u == v){
+					List<Character> temp = new ArrayList<Character>();
+					temp.add(u);
+					result.add(temp);
+					return result;
+				}
+				boolean[] visited = new boolean[V];
+				Deque<Character> path = new ArrayDeque<Character>();
+				getAllPathsDFS(u, v, visited, path, result);
 			}
-			boolean[] visited = new boolean[V];
-			Deque<Character> path = new ArrayDeque<Character>();
-			getAllPathsDFS(u, v, visited, path, result);
 			return result;
 		}
 		
