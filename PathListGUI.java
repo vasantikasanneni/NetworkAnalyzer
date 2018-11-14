@@ -321,7 +321,10 @@ public class PathListGUI extends javax.swing.JFrame {
         }
         g.addEdge(end, end, 0);
         
-        List<List<Character>> results = g.getAllPaths(begin, end);				
+        List<List<Character>> results = g.getAllPaths(begin, end);		
+         if(results.size() == 0){
+            JOptionPane.showMessageDialog(rootPane, "Cycle Detected");
+        }
         List<Integer> lengths = new ArrayList<Integer>();
         for(int n = 0; n < results.size(); n++){
                 List<Character> l = results.get(n);
