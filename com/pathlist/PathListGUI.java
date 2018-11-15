@@ -405,15 +405,10 @@ public class PathListGUI extends javax.swing.JFrame {
                 pathTableModel.addRow(new Object[]{results.get(i).toString(), "critical"});
             }
         }
-        /*
         Boolean x = g.disconnects();
         if(x == true) {
             JOptionPane.showMessageDialog(rootPane, "Error, not all activities are connected");
-
         }
-        else{
-
-        }*/
 
     }
 

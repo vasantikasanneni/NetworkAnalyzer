@@ -1,3 +1,4 @@
+
 package com.pathlist;
 
 import java.util.ArrayList;
@@ -74,6 +75,8 @@ public class Dijkstras {
 			path.add(u); // Add to the end
 			if(u == v){
 				result.add(new ArrayList<Character>(path));
+				countResults++;
+				//System.out.println(countResults);
 			}
 			else{
 				if(adj.containsKey(u)){
@@ -91,14 +94,13 @@ public class Dijkstras {
 			path.removeLast();
 			visited[index] = false;
 		}
-		/*public boolean disconnects(){
+		public boolean disconnects(){
 			if(countResults == 0){
-
 				return true;
 			}
 			else{
 				return false;
 			}
-		}*/
+		}
 	}
 }
